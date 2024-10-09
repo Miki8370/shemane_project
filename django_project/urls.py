@@ -22,6 +22,9 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')), #new
+    path('customers/', include('django.contrib.auth.urls')), #is core authentication frame work
+    path('customers/', include("customers.urls")),# this one allow to access the cusomers urls other than authentication
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

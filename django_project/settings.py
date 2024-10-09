@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "pages.apps.PagesConfig"#new
+    "pages.apps.PagesConfig",#new
+   "customers.apps.CustomersConfig" #made app the to handle user authentication
 
 ]
 
@@ -123,8 +124,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = 'media/' #it will crate directory called media to save all the media files
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media") #this one allows to access the media or tells where to find the mideas
 
 
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

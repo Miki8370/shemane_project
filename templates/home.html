@@ -8,17 +8,25 @@
 
 <div class="header">
 
-    <li>
-        <ul>
-            <a href="">Custom Designs</a>
-        </ul>
-        <ul>
-            <a href="">Sign Up</a>
-        </ul>
-        <ul>
-            <a href="">Sign in</a>
-        </ul>
-    </li>
+        {% if user.is_authenticated %} 
+
+        <p>{{user.username}}!</p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">logout</button>
+        </form>
+
+        {% else %}
+        <p>
+            <a href="{% url 'login' %}">Login</a>
+        </p>
+
+        <p>
+            <a href="{% url 'signup' %}">signup</a>
+        </p>
+
+       
+    {% endif %}
 
 </div>
 
