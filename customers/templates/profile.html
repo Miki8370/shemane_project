@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}{ user.username }{% endblock title %}
+
+{% block content %}
+
+<img src="{{ customer_profile.customer_profile_picture.url }}" alt="">
+<p>Name:- {{user.username}}</p>
+<p>Email:- {{customer_profile.customer_email}}</p>
+<p>Address:- {{customer_profile.customer_address}}</p>
+<p>Phone Number:- {{customer_profile.customer_phone}}</p>
+
+<a href="{% url 'home' %}">Go Back Home</a>
+{% endblock content %}
