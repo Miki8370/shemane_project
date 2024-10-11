@@ -11,6 +11,8 @@ class SignUpPage(generic.CreateView):
     template_name = 'registration/signup.html'
     success_url = reverse_lazy('login')
 
+    
+
 class Customer_Profile(View):
     def get(self, request):
         customer_profile = request.user.customerprofile
